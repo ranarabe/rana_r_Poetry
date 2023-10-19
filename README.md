@@ -1,1 +1,1 @@
-<img src="coverage.svg" alt="Coverage Badge">
+<img src="new_coverage.svg" alt="Coverage Badge">
