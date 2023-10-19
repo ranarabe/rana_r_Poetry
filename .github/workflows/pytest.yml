@@ -54,7 +54,7 @@ jobs:
           source .venv/bin/activate
           poetry run pytest tests/
           #coverage report
-          poetry run coverage
+          poetry run coverage report
 
       - name: Coverage Badge
         uses: tj-actions/coverage-badge-py@v2
