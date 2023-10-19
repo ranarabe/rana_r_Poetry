@@ -55,3 +55,6 @@ jobs:
           pytest tests/
           #coverage report
           poetry run coverage
+
+      - name: Coverage Badge
+        uses: tj-actions/coverage-badge-py@v2
