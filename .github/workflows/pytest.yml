@@ -82,13 +82,13 @@ jobs:
         run: |
           # Generate the coverage badge
           
-          coverage-badge -o new_coverage.svg
+          coverage-badge -o new_v_coverage.svg
 
           # Commit the generated badge to the repository
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           
-          git add new_coverage.svg
+          git add new_v_coverage.svg
           git commit -m "Update coverage badge"
           git push
         env:
@@ -102,10 +102,10 @@ jobs:
       - name: Update README with Coverage Badge
         run: |
           # Generate the badge URL (e.g., Codecov)
-          COVERAGE_BADGE_URL="new_coverage.svg" 
+          COVERAGE_BADGE_URL="new_v_coverage.svg" 
 
           # Update the README with the new badge
-          echo '<img src="new_coverage.svg" alt="Coverage Badge">' > README.md
+          echo '<img src="new_v_coverage.svg" alt="Coverage Badge">' > README.md
 
           # Commit and push the changes
           git config user.name "GitHub Actions"
