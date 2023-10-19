@@ -56,38 +56,39 @@ jobs:
       #- name: coverage-badge -o coverage.svg
       #  uses: tj-actions/coverage-badge-py@v2
 
+
       #----------------------------------------------
-      #              Generate Coverage Badge
+      #              Delete Coverage Badge
       #----------------------------------------------
    
       - name: Delete Existing Badge
         run: |
-          rm -f new_v_coverage.svg
+          rm -f coverage.svg
 
           # Commit the deleting
           
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add new_v_coverage.svg
+          git add coverage.svg
           git commit -m "delete old coverage badge file"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #----------------------------------------------
+      #              Generate Coverage Badge
+      #----------------------------------------------
 
-
-      
-      
       - name: Generate Coverage Badge
         run: |
           # Generate the coverage badge
           
-          coverage-badge -o new_v_coverage.svg
+          coverage-badge -o coverage.svg
 
           # Commit the generated badge to the repository
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          
-          git add new_v_coverage.svg
+      
+          git add coverage.svg
           git commit -m "Update coverage badge"
           git push
         env:
@@ -101,10 +102,10 @@ jobs:
       - name: Update README with Coverage Badge
         run: |
           # Generate the badge URL (e.g., Codecov)
-          COVERAGE_BADGE_URL="new_v_coverage.svg" 
+          COVERAGE_BADGE_URL="coverage.svg" 
 
           # Update the README with the new badge
-          echo '<img src="new_v_coverage.svg" alt="Coverage Badge">' > README.md
+          echo '<img src="coverage.svg" alt="Coverage Badge">' > README.md
 
           # Commit and push the changes
           git config user.name "GitHub Actions"
