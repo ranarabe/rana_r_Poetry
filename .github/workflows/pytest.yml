@@ -64,7 +64,18 @@ jobs:
       - name: Delete Existing Badge
         run: |
           rm -f new_coverage.svg
-        continue-on-error: true
+
+          # Commit the deleting
+          
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add --all
+          git commit -m "delete old coverage badge file"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+
       
       
       - name: Generate Coverage Badge
