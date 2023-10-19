@@ -82,8 +82,8 @@ jobs:
       - name: Generate Coverage Badge
         run: |
           # Generate the coverage badge
-          
-          coverage-badge -o coverage.svg
+          Coverage Badge
+          Coverage-badge -o coverage.svg
 
           # Commit the generated badge to the repository
           git config user.name "GitHub Actions"
