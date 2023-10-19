@@ -1,1 +1,1 @@
-<img src="coverage.svg" alt="Coverage Badge">
+[![Coverage](YOUR_BADGE_URL)](LINK_TO_YOUR_COVERAGE_REPORT)
