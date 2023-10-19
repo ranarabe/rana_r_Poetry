@@ -60,6 +60,13 @@ jobs:
       #----------------------------------------------
       #              Generate Coverage Badge
       #----------------------------------------------
+   
+      - name: Delete Existing Badge
+        run: |
+          rm -f new_coverage.svg
+        continue-on-error: true
+      
+      
       - name: Generate Coverage Badge
         run: |
           # Generate the coverage badge
