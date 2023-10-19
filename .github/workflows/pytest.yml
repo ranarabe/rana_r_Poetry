@@ -52,7 +52,7 @@ jobs:
       - name: Run tests
         run: |
           source .venv/bin/activate
-          pytest tests/
+          poetry run pytest tests/
           #coverage report
           poetry run coverage
 
