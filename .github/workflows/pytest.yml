@@ -65,10 +65,10 @@ jobs:
       - name: Update README with Coverage Badge
         run: |
           # Generate the badge URL (e.g., Codecov)
-          COVERAGE_BADGE_URL="YOUR_BADGE_URL"
+          COVERAGE_BADGE_URL="coverage.svg" 
 
           # Update the README with the new badge
-          echo "[![Coverage]($COVERAGE_BADGE_URL)](LINK_TO_YOUR_COVERAGE_REPORT)" > README.md
+          echo '<img src="coverage.svg" alt="Coverage Badge">' > README.md
 
           # Commit and push the changes
           git config user.name "GitHub Actions"
