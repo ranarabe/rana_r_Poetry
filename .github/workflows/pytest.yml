@@ -57,10 +57,26 @@ jobs:
         uses: tj-actions/coverage-badge-py@v2
 
       #----------------------------------------------
-      #              Update Coverage Badge
+      #              Generate Coverage Badge
       #----------------------------------------------
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Generate Coverage Badge
+        run: |
+          # Generate the coverage badge
+          coverage-badge -o coverage.svg
+
+          # Commit the generated badge to the repository
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add coverage.svg
+          git commit -m "Update coverage badge"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+
+      #----------------------------------------------
+      #              Update Coverage Badge URL
+      #----------------------------------------------
 
       - name: Update README with Coverage Badge
         run: |
@@ -74,7 +90,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add README.md
-          git commit -m "Update coverage badge"
+          git commit -m "Update URL coverage badge"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
