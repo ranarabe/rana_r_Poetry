@@ -81,26 +81,27 @@ jobs:
       - name: install
         run: |
           pip install coverage-badge
-      - name: Check coverage-badge version
-        run: pip show coverage-badge | grep Version
-
-          
+      # - name: Check coverage-badge version
+      #   run: pip show coverage-badge | grep Version
       - name: Generate Coverage Badge
-        run: |
-          # Generate the coverage badge
-          pip install coverage-badge
-          coverage badge
-          coverage-badge -o coverage.svg
+        run: coverage-badge -o new_coverage.svg
+          
+      # - name: Generate Coverage Badge
+      #   run: |
+      #     # Generate the coverage badge
+      #     pip install coverage-badge
+      #     coverage badge
+      #     coverage-badge -o coverage.svg
 
-          # Commit the generated badge to the repository
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+      #     # Commit the generated badge to the repository
+      #     git config user.name "GitHub Actions"
+      #     git config user.email "actions@github.com"
       
-          git add coverage.svg
-          git commit -m "Update coverage badge"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #     git add coverage.svg
+      #     git commit -m "Update coverage badge"
+      #     git push
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
 
       #----------------------------------------------
