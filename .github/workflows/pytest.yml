@@ -83,7 +83,7 @@ jobs:
         run: |
           # Generate the coverage badge
           pip install coverage-badge
-          coverage Badge
+          coverage badge
           coverage-badge -o coverage.svg
 
           # Commit the generated badge to the repository
