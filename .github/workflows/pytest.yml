@@ -82,7 +82,7 @@ jobs:
       - name: Generate Coverage Badge
         run: |
           # Generate the coverage badge
-          pip install coverage
+          pip install coverage-badge
           coverage Badge
           coverage-badge -o coverage.svg
 
