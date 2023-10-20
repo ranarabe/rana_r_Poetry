@@ -83,8 +83,8 @@ jobs:
           pip install coverage-badge
       # - name: Check coverage-badge version
       #   run: pip show coverage-badge | grep Version
-      - name: Generate Coverage Badge
-        run: coverage-badge -o new_coverage.svg
+      # - name: Generate Coverage Badge
+      #   run: coverage-badge -o new_coverage.svg
           
       # - name: Generate Coverage Badge
       #   run: |
