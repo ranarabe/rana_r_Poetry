@@ -64,6 +64,7 @@ jobs:
       - name: Delete Existing Badge
         run: |
           rm -f new_coverage.svg
+          rm -f coverage.svg
       
           # Commit the deleting
           
@@ -114,22 +115,22 @@ jobs:
       #              Update Coverage Badge URL
       #----------------------------------------------
 
-      - name: Update README with Coverage Badge
-        run: |
-          # Generate the badge URL (e.g., Codecov)
-          COVERAGE_BADGE_URL="new_coverage.svg" 
+      # - name: Update README with Coverage Badge
+      #   run: |
+      #     # Generate the badge URL (e.g., Codecov)
+      #     COVERAGE_BADGE_URL="new_coverage.svg" 
 
-          # Update the README with the new badge
-          echo '<img src="new_coverage.svg" alt="Coverage Badge">' > README.md
+      #     # Update the README with the new badge
+      #     echo '<img src="new_coverage.svg" alt="Coverage Badge">' > README.md
 
-          # Commit and push the changes
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          #git add README.md
-          git add .
-          git commit -m "Update URL coverage badge"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #     # Commit and push the changes
+      #     git config user.name "GitHub Actions"
+      #     git config user.email "actions@github.com"
+      #     #git add README.md
+      #     git add .
+      #     git commit -m "Update URL coverage badge"
+      #     git push
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
         
