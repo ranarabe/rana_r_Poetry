@@ -82,7 +82,7 @@ jobs:
         run: |
           pip install coverage-badge
       - name: Check coverage-badge version
-        run: coverage-badge --version
+        run: pip show coverage-badge | grep Version
 
           
       - name: Generate Coverage Badge
