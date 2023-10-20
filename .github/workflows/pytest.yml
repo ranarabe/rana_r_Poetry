@@ -125,7 +125,8 @@ jobs:
           # Commit and push the changes
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add README.md
+          #git add README.md
+          git add .
           git commit -m "Update URL coverage badge"
           git push
         env:
