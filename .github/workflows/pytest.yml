@@ -78,7 +78,13 @@ jobs:
       # #----------------------------------------------
       # #              Generate Coverage Badge
       # #----------------------------------------------
+      - name: install
+        run: |
+          pip install coverage-badge
+      - name: Check coverage-badge version
+        run: coverage-badge --version
 
+          
       - name: Generate Coverage Badge
         run: |
           # Generate the coverage badge
