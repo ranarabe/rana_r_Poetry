@@ -1,0 +1,31 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment directories
+.venv/
+venv/
+env/
+
+# Ignore editor and IDE-specific files
+.idea/
+.vscode/
+.project
+.pycproject
+
+# Ignore log files
+*.log
+
+# Ignore sensitive or confidential information (config files, secrets, etc.)
+.env
+.envrc
+secrets.yml
+
+# Ignore build artifacts and output directories
+build/
+dist/
+output/
+
+# Ignore Node.js modules (if it's a JavaScript project)
+node_modules/
