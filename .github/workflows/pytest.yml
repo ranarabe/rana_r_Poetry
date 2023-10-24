@@ -95,6 +95,13 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          
+      # #----------------------------------------------
+      # #              PyLin
+      # #----------------------------------------------
+      - name: Run PyLin
+        run: |
+          poetry run pylint ./rana_new_poetry
 
 
         
