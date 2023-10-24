@@ -109,7 +109,7 @@ jobs:
       # #----------------------------------------------
       - name: Run black
         run: |
-          poetry run black .\rana_new_poetry
+          poetry run black ./rana_new_poetry
 
 
         
