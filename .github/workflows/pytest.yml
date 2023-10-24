@@ -104,4 +104,12 @@ jobs:
           poetry run pylint ./rana_new_poetry
 
 
+      # #----------------------------------------------
+      # #              Black
+      # #----------------------------------------------
+      - name: Run black
+        run: |
+          poetry run black .\rana_new_poetry
+
+
         
