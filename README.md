@@ -1,2 +1,2 @@
 
-[![Code style: black](new_coverage.svg)](https://github.com/psf/black)
+<img src="new_coverage.svg" alt="Coverage Badge">
